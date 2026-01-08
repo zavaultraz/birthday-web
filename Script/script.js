@@ -3,7 +3,6 @@ const muteBtn = document.getElementById("muteBtn");
 
 let hasPlayed = false;
 
-// ▶️ PLAY AUDIO SAAT SCROLL PERTAMA
 window.addEventListener("scroll", () => {
     if (!hasPlayed) {
         audio.play().catch(err => console.log(err));
@@ -11,7 +10,6 @@ window.addEventListener("scroll", () => {
     }
 });
 
-// 🔇🔊 TOGGLE MUTE
 muteBtn.addEventListener("click", () => {
     audio.muted = !audio.muted;
 
@@ -27,7 +25,6 @@ const popup = document.getElementById("experiencePopup");
 const allowBtn = document.getElementById("allowSound");
 const denyBtn = document.getElementById("denySound");
 
-// ALLOW → PLAY & UNMUTE
 allowBtn.addEventListener("click", () => {
     audio.muted = false;
     audio.volume = 1;
@@ -35,9 +32,8 @@ allowBtn.addEventListener("click", () => {
     popup.style.display = "none";
 });
 
-// DENY → PLAY MUTED / ATAU TIDAK PLAY
 denyBtn.addEventListener("click", () => {
     audio.muted = true;
-    audio.play(); // optional, boleh dihapus
+    audio.play();
     popup.style.display = "none";
 });
