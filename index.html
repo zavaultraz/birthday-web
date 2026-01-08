@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dex Parker - Birthday Invitation</title>
+    <link rel="stylesheet" href="/Css/style.css">
+</head>
+
+<body>
+    <div class="racing-stripes"></div>
+
+    <div class="container">
+        <div class="hero">
+            <img src="/Asset/Image/picture.jpeg" alt="Birthday Person"
+                class="birthday-photo">
+            <h1>Dex Parker become 18</h1>
+            <div class="tagline">🏁 START YOUR ENGINES 🏁</div>
+            <div class="event-details">
+                <strong>📅 Date:</strong> Wednesday, October 14, 2026<br>
+                <strong>⏰ Time:</strong> 4.00 PM - Late<br>
+                <strong>📍 Location:</strong> Kul Kul Teknologi International Building
+            </div>
+        </div>
+
+        <div class="map-section">
+            <h2 class="map-title">📍 Location Map</h2>
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.8229842!3d-6.208763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5390917b759%3A0x6b45e67356080477!2sBundaran%20HI!5e0!3m2!1sen!2sid!4v1234567890"
+                    width="100%" height="450" style="border:0; display: block;" allowfullscreen=""
+                    loading="lazy"></iframe>
+            </div>
+        </div>
+
+        <div class="messages-section">
+            <h2 class="messages-title">🏆 Birthday Messages 🏆</h2>
+            <div class="messages-grid" id="messagesGrid"></div>
+        </div>
+
+        <div class="rsvp-section">
+            <h2 class="rsvp-title">⚡ RSVP & Send Wishes ⚡</h2>
+            <form id="rsvpForm">
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" required placeholder="Enter your name">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Birthday Message *</label>
+                    <textarea id="message" required placeholder="Share your birthday wishes..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="attending">Will you attend? *</label>
+                    <select id="attending" class="select-input">
+                        <option value="yes">Yes, I'll be there! 🏁</option>
+                        <option value="maybe">Maybe</option>
+                        <option value="no">Can't make it 😢</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn">Submit </button>
+                <div id="successMessage" class="success-message">
+                    ✓ RSVP Submitted Successfully! Your message has been posted!
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <audio id="bgAudio" loop muted>
+        <source
+            src="/Asset/Sound/audio.mp3"
+            type="audio/mp3">
+    </audio>
+    </audio>
+    <div class="music-player">
+        <button class="music-btn" id="muteBtn">🔊</button>
+    </div>
+
+    <div class="experience-popup" id="experiencePopup">
+        <div class="popup-box">
+            <h2>🚀 Enhance Your Experience</h2>
+            <p>Enable sound for a better experience</p>
+
+            <div class="popup-actions">
+                <button id="allowSound">🔊 Allow</button>
+                <button id="denySound">No Thanks</button>
+            </div>
+        </div>
+    </div>
+    <script src="/Script/script.js"></script>
+    <script type="module" src="/Script/firebase.js"></script>
+</body>
+
+</html>

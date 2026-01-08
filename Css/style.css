@@ -1,0 +1,462 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+    color: #fff;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.racing-stripes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 100px,
+        rgba(255, 215, 0, 0.03) 100px,
+        rgba(255, 215, 0, 0.03) 110px
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 0;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.15) 0%, transparent 70%);
+    z-index: -1;
+}
+
+.birthday-photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 5px solid #ffd700;
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.6), 0 0 80px rgba(255, 68, 0, 0.4);
+    margin: 0 auto 30px;
+    object-fit: cover;
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% { 
+        box-shadow: 0 0 40px rgba(255, 215, 0, 0.6), 0 0 80px rgba(255, 68, 0, 0.4); 
+    }
+    50% { 
+        box-shadow: 0 0 60px rgba(255, 215, 0, 0.8), 0 0 120px rgba(255, 68, 0, 0.6); 
+    }
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 5em;
+    font-weight: 900;
+    background: linear-gradient(45deg, #ffd700, #ff4400, #ffd700);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shine 3s linear infinite;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+@keyframes shine {
+    to { 
+        background-position: 200% center; 
+    }
+}
+
+.tagline {
+    font-size: 1.8em;
+    color: #ffd700;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.event-details {
+    font-size: 1.3em;
+    color: #ddd;
+    margin-top: 20px;
+    line-height: 1.8;
+}
+
+.map-section {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.map-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5em;
+    color: #ffd700;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.map-container {
+    border: 3px solid #ffd700;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.messages-section {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 68, 0, 0.1) 100%);
+    border: 2px solid #ffd700;
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 60px;
+    box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3);
+}
+
+.messages-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5em;
+    color: #ffd700;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.messages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.message-card {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.message-card:hover {
+    transform: translateY(-5px);
+    border-color: #ffd700;
+    box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+}
+
+.message-name {
+    font-weight: 700;
+    color: #ffd700;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.message-text {
+    color: #ddd;
+    line-height: 1.6;
+}
+
+.rsvp-section {
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(10, 10, 10, 0.9) 100%);
+    border: 2px solid #ff4400;
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0 10px 40px rgba(255, 68, 0, 0.3);
+}
+
+.rsvp-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3em;
+    color: #ff4400;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    color: #ffd700;
+    font-weight: 600;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+input, textarea, .select-input {
+    width: 100%;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.1em;
+    font-family: 'Rajdhani', sans-serif;
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus, .select-input:focus {
+    outline: none;
+    border-color: #ffd700;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.btn {
+    background: linear-gradient(45deg, #ff4400, #ffd700);
+    color: #000;
+    padding: 18px 50px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.4em;
+    font-weight: 700;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 30px auto 0;
+    box-shadow: 0 5px 25px rgba(255, 68, 0, 0.5);
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 35px rgba(255, 68, 0, 0.7);
+}
+
+.music-player {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 68, 0, 0.2));
+    border: 2px solid #ffd700;
+    border-radius: 50px;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 5px 30px rgba(255, 215, 0, 0.4);
+    z-index: 1000;
+}
+
+.music-btn {
+    background: #ffd700;
+    color: #000;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.music-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+}
+
+.music-info {
+    color: #ffd700;
+    font-weight: 600;
+}
+
+.success-message {
+    background: rgba(0, 255, 0, 0.2);
+    border: 2px solid #0f0;
+    color: #0f0;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 600;
+    display: none;
+}
+
+.experience-popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.popup-box {
+    background: #111;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 320px;
+    color: #fff;
+}
+
+.popup-box h2 {
+    margin-bottom: 10px;
+}
+
+.popup-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.popup-actions button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#allowSound {
+    background: #ff0000;
+    color: white;
+}
+
+#denySound {
+    background: #333;
+    color: white;
+}
+
+.message-card {
+    background: #111;
+    padding: 15px;
+    border-radius: 12px;
+    color: white;
+    box-shadow: 0 0 10px rgba(255,0,0,0.3);
+}
+
+.message-card h3 {
+    margin-bottom: 5px;
+}
+
+.attending {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.attending.yes { color: #00ff00; }
+.attending.maybe { color: #ffcc00; }
+.attending.no { color: #ff4444; }
+
+
+</style>
+
+<script>
+// script.js
+const messages = [
+    { name: "Marcus \"Nitro\" Rodriguez", message: "Happy birthday to the fastest racer I know! May your year be filled with victory laps and endless horsepower! 🏎️💨", attending: "yes" },
+    { name: "Sarah \"Turbo\" Chen", message: "Wishing you a birthday as epic as your last race! You're not getting older, you're just getting more turbocharged! Keep burning rubber! 🔥", attending: "yes" },
+    { name: "Jake \"Speed Demon\" Williams", message: "Happy birthday legend! Another year, another lap around the sun. Here's to breaking records and living life in the fast lane! 🏁", attending: "yes" },
+    { name: "Elena \"Drift Queen\" Martinez", message: "To the birthday king/queen! May your day be filled with adrenaline, good vibes, and zero speed limits. Let's celebrate like champions! 🎉🏆", attending: "yes" },
+    { name: "Alex \"Lightning\" Thompson", message: "Happy birthday to someone who makes every moment count! You're not just racing through life, you're owning it. Have an amazing day! ⚡", attending: "yes" },
+    { name: "Sofia \"Rev\" Garcia", message: "Cheers to another year of being absolutely legendary! May your birthday be as thrilling as a midnight race. Party hard! 🎊", attending: "yes" }
+];
+
+const playBtn = document.getElementById('playBtn');
+const bgMusic = document.getElementById('bgMusic');
+const form = document.getElementById('rsvpForm');
+const messagesGrid = document.getElementById('messagesGrid');
+const successMessage = document.getElementById('successMessage');
+
+let isPlaying = false;
+
+playBtn.addEventListener('click', () => {
+    if (isPlaying) {
+        bgMusic.pause();
+        playBtn.textContent = '▶';
+    } else {
+        bgMusic.play();
+        playBtn.textContent = '⏸';
+    }
+    isPlaying = !isPlaying;
+});
+
+function displayMessages() {
+    messagesGrid.innerHTML = messages.map(msg => `
+        <div class="message-card">
+            <div class="message-name">${msg.name}</div>
+            <div class="message-text">${msg.message}</div>
+        </div>
+    `)join(');
+}
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const message = document.getElementById('message').value;
+    const attending = document.getElementById('attending').value;
+    
+    messages.unshift({
+        name: name,
+        message: message,
+        attending: attending
+    });
+    
+    displayMessages();
+    
+    successMessage.style.display = 'block';
+    
+    form.reset();
+    
+    setTimeout(() => {
+        successMessage.style.display = 'none';
+    }, 5000);
+    
+    messagesGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+
+displayMessages();
+</script>
