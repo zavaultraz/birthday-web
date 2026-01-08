@@ -13,12 +13,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // CONFIG
     const firebaseConfig = {
-        apiKey: "AIzaSyBPTaROKUU8Qbx-f-H1lszUoQIdmkussq4",
-        authDomain: "game-garage-8qj86.firebaseapp.com",
-        projectId: "game-garage-8qj86",
-        storageBucket: "game-garage-8qj86.firebasestorage.app",
-        messagingSenderId: "622612048115",
-        appId: "1:622612048115:web:eda591ebf27ae31fd16f86"
+        apiKey: "AIzaSyDD3-iVSLnCA9FNwmbLpSPQVoytIlhwrmc",
+        authDomain: "website-49b39.firebaseapp.com",
+        projectId: "website-49b39",
+        storageBucket: "website-49b39.firebasestorage.app",
+        messagingSenderId: "385831440406",
+        appId: "1:385831440406:web:b9aef4a14ec5e953e0e537",
+        measurementId: "G-GSPDXM2YWR"
     };
 
     // INIT
