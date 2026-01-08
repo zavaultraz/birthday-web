@@ -1,14 +1,16 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    Font-family: 'Poppins', sans-serif;
 }
 
 body {
-    font-family: 'Rajdhani', sans-serif;
+    Font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
     color: #fff;
     overflow-x: hidden;
